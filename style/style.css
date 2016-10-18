@@ -3,6 +3,12 @@
 }
 
 .item-details {
-  
-  
+  display: inline-block;
+  margin: 70px;
+}
+
+.thumbnail-image {
+  height: 256px;
+  width: 144px;
+
 }

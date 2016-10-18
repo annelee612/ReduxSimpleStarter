@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 const Item = ({item}) => (
   <div className='item-details'>
-    <div>{item.pic}</div>
+    <img className="thumbnail-image" src={item.pic} />
     <div>{item.title}</div>
     <div>{item.description}</div>
   

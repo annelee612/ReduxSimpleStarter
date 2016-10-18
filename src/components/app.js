@@ -10,11 +10,9 @@ export default class App extends React.Component {
 
   constructor(props) {
   	super(props);
-    /*console.log(props.data);
-    this.state = {
+    /*this.state = {
       item: props.data
-    }
-    console.log(this.state.item[0].pic);*/
+    }*/
 
   }
 
