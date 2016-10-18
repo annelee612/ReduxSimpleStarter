@@ -19,4 +19,4 @@ var picSchema = mongoose.Schema({
 
 var Picture = mongoose.model('Picture', picSchema);
 
-module.exports = Picture;
+export default Picture;

@@ -9,9 +9,17 @@ var express = require('express');
 var app = express();
 app.use(express.static('public'));
 
-app.get('/', function(req, res) {
+app.get('/index', function(req, res) {
   //try to render index html page in clientr
   res.send('/');
+});
+
+app.post('/save', function(req, res) {
+
+});
+
+app.get('/user/:username', function(req, res) {
+
 });
 
 // //let user post on homepage
