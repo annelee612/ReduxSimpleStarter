@@ -5,13 +5,13 @@ import Item from './Item.js';
 
 
 var Display = (props) => (
-  <span className="display-items">
+  <div id="display-items" className="row" >
     {
       props.items.map((item) => { 
-      return (<Item key={item.title} item={item} />);
+        return (<span className="col-md-4"><Item key={item.title} item={item} /></span>);
       })
     }
-  </span>
+  </div>
 );
 
 

@@ -1,4 +1,5 @@
-.profile {
+.profile-but {
+  margin-top: 21px;
   float: right;
 }
 
@@ -7,8 +8,35 @@
   margin: 70px;
 }
 
-.thumbnail-image {
-  height: 256px;
-  width: 144px;
+#thumbnail-image {
+  height: 260px;
+  width: 200px;
 
+}
+
+.input-bar {
+  margin-top: 10px;
+  height: 50px;
+  width: 700px;
+}
+
+.input-type-box {
+  margin-top: 10px;
+  width: 400px;
+}
+
+.display-items {
+  
+}
+
+.header {
+  height: 100px;	
+}
+
+.title {
+  height: 20px;
+  font-size: 30px;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 10px;
 }

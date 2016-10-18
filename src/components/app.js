@@ -2,7 +2,7 @@ import React from 'react';
 
 // import Inputbox from './components/Inputbox';
 import Display from './Display.js';
-// import Item from './Item.js'
+import Nav from './Nav.js'
 
 
 
@@ -10,25 +10,29 @@ export default class App extends React.Component {
 
   constructor(props) {
   	super(props);
-    /*this.state = {
-      item: props.data
-    }*/
+    this.state = {
+      items: props.data
+    }
 
+  }
+
+  getPics(query) {
+    this.setState({
+      items: items
+    })
   }
 
   render() {
 
     return (
       <div>
-	      <div className='header'>
-	        <form className="urlInput">
-	          <input placeholder="I want this..."></input>
-	          <button type="submit">Add to Wishlist</button>
-	          <button className="profile"> My Wishlist </button>
-	          <button className="profile"> Friends </button>
-	        </form>
+	      <div className='header'> <div className='title'>Wishlist</div>
+            <Nav handleListInputChange={this.getPics.bind(this)}/>
+        
+	          <button className="profile-but"> My Wishlist </button>
+	          <button className="profile-but"> Friends </button>
 	      </div>
-        <span><Display items={this.props.data} /></span>
+        <Display items={this.state.items} />
      </div>
     
     );
