@@ -1,10 +1,11 @@
 
 var Promise = require('bluebird');
 var mongoose = require('mongoose');
-var db = mongoose.connection;
 
 mongoURI = 'mongodb://localhost/wishlistdb';
 mongoose.connect(mongoURI);
+var db = mongoose.connection;
+
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
@@ -19,4 +20,5 @@ var picSchema = mongoose.Schema({
 
 var Picture = mongoose.model('Picture', picSchema);
 
-export default Picture;
+module.exports.Picture = Picture;
+module.exports.db = db;

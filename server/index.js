@@ -1,33 +1,61 @@
-var http = require('http');
-var babel = require('babel-register');
-var express = require('express');
 
-//var db = require('/config/db');
+const express = require('express');
+// const morgan = require('morgan');
+const http = require('http');
+const bodyParser = require('body-parser');
+const app = express();
+const port = process.env.PORT || 3000;
+// const cors = require('cors');
+var path = require('path');
 
-//mongoose.connect(db.url);
+var Picture = require('./pictures').Picture;
+var db = require('./pictures').db;
 
-var app = express();
-app.use(express.static('public'));
 
-app.get('/index', function(req, res) {
-  //try to render index html page in clientr
-  res.send('/');
-});
+var publicPath = path.resolve(__dirname, 'src');
 
-app.post('/save', function(req, res) {
 
-});
 
-app.get('/user/:username', function(req, res) {
 
-});
+// app.use(morgan('combined'));
+app.use(bodyParser.json());
+app.use(express.static('./src'));
 
-// //let user post on homepage
-// app.post('/', function(req, res) {
-//   res.send();
+app.get('/', function (request, response){
+  var uri = request.body.url; //"http://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-7-1.jpg";
+  Picture.findOne({ url: uri })
+    .then(function(found) {
+    	console.log(found);
+      if (found === undefined) {
+      	console.log('not found saving now');
+      	var newPic = new Picture({url: uri});
+      	newPic.save().then(function(newPic) {
+      	  res.status(200).send(newPic);
+      	});
+      } else {
+      	response.send(found);
+      }
+    })
+})
+
+// app.post('', function(request, response) {
+//   var uri = "http://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-7-1.jpg";//request.body.url;
+//   var pic = new Picture({url: uri});
+//   pic.save(function(err) {
+//   	if (err) {
+//   	  response.send('error saving!');
+//   	} else {
+//   	  response.send('success posting');
+//   	}
+//   });
+// })
+// app.get('*', function (request, response){
+//   response.sendFile(path.resolve(__dirname, 'src', 'index.html'))
 // })
 
+const server = http.createServer(app);
 
-app.listen(8080, function () {
-  console.log('Example app listening on port 8080!');
-});
+server.listen(port);
+console.log("Server listening on: ", port);
+
+
