@@ -6,7 +6,7 @@ const Input = ({handleListInputChange}) => (
     <span>
 	  <input 
 	    className="input-type-box"
-	    placeholder="I want this..."
+	    placeholder="I want..."
 		type="text"
 	    onChange={(e) => {handleListInputChange(e.target.value)}}
 	  />

@@ -61,8 +61,8 @@ export default class App extends React.Component {
       <div>
 	      <div className='header'> <div className='title'>Wishlist</div>
             <Nav handleListInputChange={this.getPics.bind(this)}/>
-	          <button href="/" className="profile-but"> My Wishlist </button>
-	          <button className="profile-but"> Friends </button>
+	          <button className="profile-but"> My Wishlist </button>
+	          <button className="profile-but" href="../Friends.html"> Friends </button>
 	      </div>
         <Display items={this.state.items} />
      </div>
