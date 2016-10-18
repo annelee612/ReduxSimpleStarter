@@ -1,20 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-export default class Item extends React.Component {
-  constructor(props) {
-  	super(props);
-  }
+const Item = ({item}) => (
+  <div className='item-details'>
+    <div>{item.pic}</div>
+    <div>{item.title}</div>
+    <div>{item.description}</div>
+  
+  </div>
+);      
 
-  render() {
-  	return (
-  	  <div className='item'>
-  	    <div>{this.props.item.pic}</div>
-  	    <div>{this.props.item.title}</div>
-  	    <div>{this.props.item.description}</div>
-  	  </div>
-  	)	
-  }
-}
-
-
+export default Item;

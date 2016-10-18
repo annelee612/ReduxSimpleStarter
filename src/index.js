@@ -6,9 +6,11 @@ import App from './components/app';
 import Inputbox from './components/Inputbox';
 
 
+
+
 // const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 ReactDOM.render(
-    <App />,
+    <App data={window.data}/>,
     document.querySelector('.container')
 );

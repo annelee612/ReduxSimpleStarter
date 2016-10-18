@@ -2,16 +2,24 @@ import React from 'react';
 
 // import Inputbox from './components/Inputbox';
 import Display from './Display.js';
-import Item from './Item.js'
+// import Item from './Item.js'
+
 
 
 export default class App extends React.Component {
 
   constructor(props) {
   	super(props);
+    /*console.log(props.data);
+    this.state = {
+      item: props.data
+    }
+    console.log(this.state.item[0].pic);*/
+
   }
 
   render() {
+
     return (
       <div>
 	      <div className='header'>
@@ -22,9 +30,7 @@ export default class App extends React.Component {
 	          <button className="profile"> Friends </button>
 	        </form>
 	      </div>
-        <div className='display'> 
-          <Display data={this.props.data} />
-        </div>
+        <span><Display items={this.props.data} /></span>
      </div>
     
     );
