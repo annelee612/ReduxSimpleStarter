@@ -23,9 +23,11 @@ app.use(express.static('./src'));
 
 app.get('/', function (request, response){
   var uri = request.body.url; //"http://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-7-1.jpg";
+  console.log(uri, 'this is the request url');
+
   Picture.findOne({ url: uri })
     .then(function(found) {
-    	console.log(found);
+    	console.log(found, 'found url in db');
       if (found === undefined) {
       	console.log('not found saving now');
       	var newPic = new Picture({url: uri});
@@ -33,9 +35,14 @@ app.get('/', function (request, response){
       	  res.status(200).send(newPic);
       	});
       } else {
+      	console.log('sending in get request');
       	response.send(found);
       }
     })
+})
+
+app.get('/friends', function(request, response) {
+  //route friends link
 })
 
 // app.post('', function(request, response) {

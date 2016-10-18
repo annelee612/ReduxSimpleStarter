@@ -40,3 +40,30 @@
   margin-left: 15px;
   margin-bottom: 10px;
 }
+
+#friends {
+  height: 180px;
+  width: 138px;
+  padding: 5px;
+}
+
+.friend-row {
+  height: 250px;
+  padding: 40px;
+}
+
+.friend-row .name {
+  height: 250px;
+  margin-right:30px;
+  font-weight: bolder;
+}
+.friend-row .event {
+  height: 250px;
+  padding: 20px; 
+}
+#arrow {
+  height: 20px;
+  width: 20px
+  float: right;
+  margin-left: 15px;
+}

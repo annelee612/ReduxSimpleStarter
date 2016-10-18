@@ -8,12 +8,10 @@ const Input = ({handleListInputChange}) => (
 	    className="input-type-box"
 	    placeholder="I want this..."
 		type="text"
-	    onClick={(e) => {
-	    	handleListInputChange(e.target);
-	      }
-	    }
-	  /></span>
-     <span><button type="submit">Add to Wishlist</button></span>
+	    onChange={(e) => {handleListInputChange(e.target.value)}}
+	  />
+	</span>
+    <span><button type="submit">Add to Wishlist</button></span>
   </div>
 );      
 
